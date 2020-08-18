@@ -21,7 +21,7 @@ namespace ICS.Views
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            OrderController order = new OrderController();
+            FacadeOrderController order = new FacadeOrderController();
             Invoice invoice = new Invoice();
             invoice.CustomerID =Convert.ToInt32(ddlCustomer.SelectedValue);
             invoice.ItemID = Convert.ToInt32(ddlProducts.SelectedValue);

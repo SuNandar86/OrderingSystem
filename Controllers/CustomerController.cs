@@ -36,7 +36,7 @@ namespace ICS.Controllers
         }
         public void Create(Customer customer)
         {
-            DataAccess.insert(customer.CustomerName,customer.CustomerPhone,customer.CustomerAddress);
+            DataAccess.insert(customer.CustomerName,customer.CustomerPhone,customer.CustomerAddress,customer.CustomerEmail,customer.Gender);
         }
     }
 }

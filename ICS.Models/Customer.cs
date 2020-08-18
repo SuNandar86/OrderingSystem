@@ -32,6 +32,18 @@ namespace ICS.Models
             get { return _customerAddress; }
             set { _customerAddress = value; }
         }
+        private string _email;
+        public string CustomerEmail
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+        private string _gender;
+        public string Gender
+        {
+            get { return _gender; }
+            set { _gender = value; }
+        }
     }
     public class CustomerCollections : Collection<Customer> { }
     }

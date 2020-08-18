@@ -24,6 +24,8 @@ namespace ICS.Views
             customer.CustomerName = txtCustomerName.Text;
             customer.CustomerPhone = txtPhoneNo.Text;
             customer.CustomerAddress = txtCustomerName.Text;
+            customer.CustomerEmail = txtEmail.Text;
+            customer.Gender = ddlGender.Text;
             customerController.Create(customer);
         }
     }

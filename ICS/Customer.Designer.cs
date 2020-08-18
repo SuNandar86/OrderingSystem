@@ -35,6 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ddlGender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(77, 119);
+            this.label3.Location = new System.Drawing.Point(77, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 0;
@@ -81,14 +85,14 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(176, 119);
+            this.txtAddress.Location = new System.Drawing.Point(176, 191);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(426, 27);
             this.txtAddress.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(176, 184);
+            this.btnSave.Location = new System.Drawing.Point(176, 244);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 29);
             this.btnSave.TabIndex = 2;
@@ -96,11 +100,51 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(77, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(176, 122);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(266, 27);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(77, 160);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Gender";
+            // 
+            // ddlGender
+            // 
+            this.ddlGender.FormattingEnabled = true;
+            this.ddlGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.ddlGender.Location = new System.Drawing.Point(176, 157);
+            this.ddlGender.Name = "ddlGender";
+            this.ddlGender.Size = new System.Drawing.Size(128, 28);
+            this.ddlGender.TabIndex = 3;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 237);
+            this.ClientSize = new System.Drawing.Size(651, 285);
+            this.Controls.Add(this.ddlGender);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label3);
@@ -124,5 +168,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox ddlGender;
     }
 }

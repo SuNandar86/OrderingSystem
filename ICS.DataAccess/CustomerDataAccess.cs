@@ -26,10 +26,10 @@ namespace ICS.DataAccess
             Connection.Open();
             return Command.ExecuteReader(CommandBehavior.CloseConnection);
         }
-        public void insert(string customer_name,string customer_phone,string customer_address)
+        public void insert(string customer_name,string customer_phone,string customer_address,string customer_email,string gender)
         {
 
-            string sqlString = "INSERT INTO customer(customer_name,customer_phone,customer_address) VALUES(" + customer_name + "," + customer_phone + "," + customer_address + ")";
+            string sqlString = "INSERT INTO customer(customer_name,customer_phone,customer_address,email,gender) VALUES('" + customer_name + "','" + customer_phone + "','" + customer_address + "','"+customer_email+"','"+gender+"')";
 
             Command = new NpgsqlCommand(sqlString, Connection);
             Command.CommandType = CommandType.Text;

@@ -7,7 +7,7 @@ using ICS.Models;
 
 namespace ICS.Controllers
 {
-    public class OrderController
+    public class FacadeOrderController
     {
         public void PlaceOrder(Invoice invoice,Payment payment)
         {
