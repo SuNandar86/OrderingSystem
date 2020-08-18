@@ -1,0 +1,87 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ICS.Views/1.0.0": {
+        "dependencies": {
+          "ICS.Controllers": "1.0.0",
+          "ICS.Models": "1.0.0"
+        },
+        "runtime": {
+          "ICS.Views.dll": {}
+        }
+      },
+      "ICS.Controllers/1.0.0": {
+        "dependencies": {
+          "ICS.DataAccess": "1.0.0",
+          "ICS.Models": "1.0.0"
+        },
+        "runtime": {
+          "Controllers.dll": {}
+        }
+      },
+      "ICS.DataAccess/1.0.0": {
+        "runtime": {
+          "ICS.DataAccess.dll": {}
+        }
+      },
+      "ICS.Models/1.0.0": {
+        "runtime": {
+          "ICS.Models.dll": {}
+        }
+      },
+      "Npgsql/4.1.4.0": {
+        "runtime": {
+          "Npgsql.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.1.4.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0.0": {
+        "runtime": {
+          "Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ICS.Views/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ICS.Controllers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ICS.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ICS.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Npgsql/4.1.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
