@@ -18,31 +18,33 @@ namespace ICS.Controllers
             DataAccess = new ProductDataAccess();
         }
         
-        public ProductCollections GetProductList()
+        public ProductCollections GetProductList(int brand_id)
         {
             ProductCollections collection = new ProductCollections();
-            IDataReader reader = DataAccess.SelectList();
+            IDataReader reader = DataAccess.SelectList(brand_id);
             while (reader.Read())
             {
                 Product product = new Product();
-                product.ProductName = Convert.ToString(reader["item_name"]);
+                product.ProductName = Convert.ToString(reader["product_name"]);
                 product.Price = Convert.ToDecimal(reader["price"]);
-                product.ProductID = Convert.ToInt32(reader["item_id"]);
+                product.ProductID = Convert.ToInt32(reader["product_id"]);
                 collection.Add(product);
 
             }
             return collection;
         }
-        public Product GetPrice(int product_id) {
+        public Product GetPrice(int product_id)
+        {
             Product product = new Product();
             IDataReader reader = DataAccess.GetPrice(product_id);
-            while (reader.Read()) {                
-                product.ProductName = Convert.ToString(reader["item_name"]);
+            while (reader.Read())
+            {
+                product.ProductName = Convert.ToString(reader["product_name"]);
                 product.Price = Convert.ToDecimal(reader["price"]);
-                product.ProductID = Convert.ToInt32(reader["item_id"]);
+                product.ProductID = Convert.ToInt32(reader["product_id"]);
             }
             return product;
-        }
+        }        
 
     }
 }

@@ -12,14 +12,12 @@ namespace ICS.Controllers
         public void PlaceOrder(Invoice invoice,Payment payment)
         {
             InvoiceController invoiceController = new InvoiceController();
-            invoiceController.Sendinvoice(invoice);
-            Invoice lastInvoice= invoiceController.GetLastID();
-            payment.OrderID = lastInvoice.OrderID;
+            int order_id=invoiceController.Sendinvoice(invoice);
+            
+            payment.OrderID = order_id;
 
             PaymentController paymentController = new PaymentController();
-            paymentController.MakePayment(payment);
-
-            // Console.WriteLine("Order Placed Successfully");
+            paymentController.MakePayment(payment);             
              
         }
     }

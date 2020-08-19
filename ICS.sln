@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICS.Views", "ICS\ICS.Views.csproj", "{9EF62444-F4B5-4038-8ADE-3567E389770C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICS.Views", "ICS\ICS.Views.csproj", "{9EF62444-F4B5-4038-8ADE-3567E389770C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICS.Controllers", "Controllers\ICS.Controllers.csproj", "{90248827-6303-432F-ADD6-E3B9A48C0BE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICS.DataAccess", "ICS.DataAccess\ICS.DataAccess.csproj", "{80CB2044-E0D6-45AE-A4F5-E6C1E98AC01B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICS.Models", "ICS.Models\ICS.Models.csproj", "{3554D647-0719-4D99-9F1C-121EF26E2DD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICS.Models", "ICS.Models\ICS.Models.csproj", "{3554D647-0719-4D99-9F1C-121EF26E2DD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

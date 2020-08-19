@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controllers;
 using ICS.Controllers;
 using ICS.Models;
 
@@ -17,65 +18,46 @@ namespace ICS.Views
         public frmOrder()
         {
             InitializeComponent();
-        }                
-
-        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        }
+        private void Order_Load(object sender, EventArgs e)
         {
-            FacadeOrderController order = new FacadeOrderController();
+            BindCustomer();
+            BindCategory();
+        }
+        private void btnPlaceOrder_Click(object sender, EventArgs e)        {
+            
             Invoice invoice = new Invoice();
             invoice.CustomerID =Convert.ToInt32(ddlCustomer.SelectedValue);
-            invoice.ItemID = Convert.ToInt32(ddlProducts.SelectedValue);
-            invoice.Quantity = Convert.ToInt32(lblPrice.Text);
+            invoice.ItemID = Convert.ToInt32(ddlProduct.SelectedValue);
+            invoice.Quantity = Convert.ToInt32(txtQty.Text);
             invoice.Amount = Convert.ToInt32(txtAmount.Text);
+            invoice.InvoiceDate = DateTime.Now;
 
             Payment payment = new Payment();
             payment.CustomerID= Convert.ToInt32(ddlCustomer.SelectedValue);
             payment.PaymentType = ddlPaymentType.Text;
             payment.Amount = Convert.ToInt32(txtAmount.Text);
             payment.PaymentDate = DateTime.Now;
-            order.PlaceOrder(invoice,payment);            
-        }
 
-        private void Order_Load(object sender, EventArgs e)
-        {
-            BindProduct();
-            BindCustomer();
-        }
-        private void BindProduct()
-        {
-            ProductController controller = new ProductController();
-            ProductCollections collection = controller.GetProductList();
-            ddlProducts.DisplayMember = "ProductName";
-            ddlProducts.ValueMember = "ProductID";
-            ddlProducts.DataSource = collection;
-            ddlProducts.SelectedIndex = -1;
-        }
-        private void BindCustomer()
-        {
-            CustomerController controller = new CustomerController();
-            CustomerCollections collection = controller.GetCustomerList();
-            ddlCustomer.DisplayMember = "CustomerName";
-            ddlCustomer.ValueMember = "CustomerID";
-            ddlCustomer.DataSource = collection;
-            ddlCustomer.SelectedIndex = -1;
-        }
 
+            FacadeOrderController order = new FacadeOrderController();
+            order.PlaceOrder(invoice,payment);
+
+            MessageBox.Show("Order Placed Successfully");
+            Utilities.ClearTextBoxes(gpOrder);
+        }        
+       
         private void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             ProductController controller = new ProductController();
-            Product product = controller.GetPrice(Convert.ToInt32(ddlProducts.SelectedValue));
-            lblPrice.Text = product.Price.ToString();
+            Product product = controller.GetPrice(Convert.ToInt32(ddlProduct.SelectedValue));
+            txtPrice.Text = product.Price.ToString();
         }
 
         private void txtQty_KeyUp(object sender, KeyEventArgs e)
         {
-           decimal amount = Convert.ToInt32(lblPrice.Text) * Convert.ToInt32(txtQty.Value);
+            decimal amount = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Value);
             txtAmount.Text = amount.ToString();
-        }
-
-        private void txtAmount_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCreateCustomer_Click(object sender, EventArgs e)
@@ -84,5 +66,62 @@ namespace ICS.Views
             fcustomer.ShowDialog();
             this.Close();
         }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BindBrand(Convert.ToInt32(ddlCategory.SelectedValue));
+        }
+
+        private void ddlBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BindProduct(Convert.ToInt32(ddlBrand.SelectedValue));
+        }
+        private void BindBrand(int category_id)
+        {
+            ddlBrand.Text = string.Empty;
+
+            BrandController controller = new BrandController();
+            BrandCollections collection = controller.GetCategoryList(category_id);
+            ddlBrand.DisplayMember = "BrandName";
+            ddlBrand.ValueMember = "BrandID";
+            ddlBrand.DataSource = collection;
+            ddlBrand.Enabled = true;
+            //ddlBrand.SelectedIndex = 1;
+        }
+        private void BindProduct(int brand_id)
+        {
+            ddlProduct.Text = string.Empty;
+
+            ProductController controller = new ProductController();
+            ProductCollections collection = controller.GetProductList(brand_id);
+            ddlProduct.DisplayMember = "ProductName";
+            ddlProduct.ValueMember = "ProductID";
+            ddlProduct.DataSource = collection;           
+            ddlProduct.Enabled = true;
+        }
+        private void BindCustomer()
+        {
+            CustomerController controller = new CustomerController();
+            CustomerCollections collection = controller.GetCustomerList();
+            ddlCustomer.DisplayMember = "CustomerName";
+            ddlCustomer.ValueMember = "CustomerID";
+            ddlCustomer.DataSource = collection;
+            ddlCustomer.Text = "Choose Customer";
+            ddlCustomer.SelectedIndex = 0;
+        }
+        public void BindCategory()
+        {
+            CategoryController controller = new CategoryController();
+            CategoryCollections collection = controller.GetCategoryList(); 
+            ddlCategory.DisplayMember = "CategoryName";
+            ddlCategory.ValueMember = "CategoryID";
+            ddlCategory.DataSource = collection;
+            ddlCategory.Text = "Choose Category";
+            ddlCategory.SelectedIndex = 0;
+        }
+       
     }
 }

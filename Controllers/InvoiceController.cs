@@ -17,21 +17,10 @@ namespace ICS.Controllers
         {
             DataAccess = new InvoiceDataAccess();
         }
-        public void Sendinvoice(Invoice invoice)
+        public int Sendinvoice(Invoice invoice)
         {
-            DataAccess.insert(invoice.CustomerID, invoice.ItemID, invoice.Quantity, invoice.Amount);
-             
-        }
-        public Invoice GetLastID()
-        {
-             
-            IDataReader reader = DataAccess.getLastID();
-            Invoice invoice = new Invoice();
-            while (reader.Read())
-            {
-                invoice.OrderID = Convert.ToInt32(reader["order_id"]); 
-            }
-            return invoice;
-        }
+            int order_id= DataAccess.insert(invoice.CustomerID, invoice.ItemID, invoice.Quantity, invoice.Amount,invoice.InvoiceDate);
+            return Convert.ToInt32(order_id);
+        }        
     }
 }

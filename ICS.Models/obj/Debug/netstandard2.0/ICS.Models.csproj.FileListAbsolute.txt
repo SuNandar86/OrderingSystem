@@ -6,4 +6,3 @@ D:\ICS\ICS.Models\obj\Debug\netstandard2.0\ICS.Models.AssemblyInfo.cs
 D:\ICS\ICS.Models\obj\Debug\netstandard2.0\ICS.Models.csproj.CoreCompileInputs.cache
 D:\ICS\ICS.Models\obj\Debug\netstandard2.0\ICS.Models.dll
 D:\ICS\ICS.Models\obj\Debug\netstandard2.0\ICS.Models.pdb
-D:\ICS\ICS.Models\obj\Debug\netstandard2.0\ICS.Models.csprojAssemblyReference.cache

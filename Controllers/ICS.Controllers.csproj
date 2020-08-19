@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrandController.cs" />
+    <Compile Include="CategoryController.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CustomerController.cs" />
     <Compile Include="InvoiceController.cs" />

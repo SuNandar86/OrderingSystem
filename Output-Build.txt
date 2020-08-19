@@ -1,0 +1,9 @@
+﻿1>------ Rebuild All started: Project: ICS.DataAccess, Configuration: Debug Any CPU ------
+2>------ Rebuild All started: Project: ICS.Models, Configuration: Debug Any CPU ------
+1>  ICS.DataAccess -> D:\ICS\ICS.DataAccess\bin\Debug\ICS.DataAccess.dll
+2>ICS.Models -> D:\ICS\ICS.Models\bin\Debug\netstandard2.0\ICS.Models.dll
+3>------ Rebuild All started: Project: ICS.Controllers, Configuration: Debug Any CPU ------
+3>  ICS.Controllers -> D:\ICS\Controllers\bin\Debug\Controllers.dll
+4>------ Rebuild All started: Project: ICS.Views, Configuration: Debug Any CPU ------
+4>ICS.Views -> D:\ICS\ICS\bin\Debug\netcoreapp3.1\ICS.Views.dll
+========== Rebuild All: 4 succeeded, 0 failed, 0 skipped ==========

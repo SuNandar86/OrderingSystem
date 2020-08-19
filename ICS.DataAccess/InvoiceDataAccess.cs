@@ -19,30 +19,19 @@ namespace ICS.DataAccess
         {
             Connection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ICSConnectionStr"].ConnectionString);
         }
-        public void insert(int customer_id,int item_id,int quantity,int amount)
+        public int insert(int customer_id,int item_id,int quantity,int amount,DateTime order_date)
         {
 
-            string sqlString= "INSERT INTO orders(customer_id,item_id,quantity,amount) VALUES(" + customer_id + ","+item_id+","+quantity+","+amount+")";
+            string sqlString= "INSERT INTO orders(customer_id,product_id,quantity,amount,order_date) VALUES(" + customer_id + ","+item_id+","+quantity+","+amount+",'"+ order_date+"') returning order_id";
             
             Command = new NpgsqlCommand(sqlString, Connection);
             Command.CommandType = CommandType.Text;
-             
             Connection.Open();
-            Command.ExecuteNonQuery();
+            string order_id= Command.ExecuteScalar().ToString();            
             Connection.Close();
-           
-        }
-        public IDataReader getLastID()
-        {
-            string sqlString = "SELECT * FROM orders order by order_id desc limit 1";
 
-            Command = new NpgsqlCommand(sqlString, Connection);
-            Command.CommandType = CommandType.Text;
-
-            Connection.Open();
-            return Command.ExecuteReader(CommandBehavior.CloseConnection);
-            
-        }
+            return Convert.ToInt32(order_id);           
+        }         
 
     }
 }

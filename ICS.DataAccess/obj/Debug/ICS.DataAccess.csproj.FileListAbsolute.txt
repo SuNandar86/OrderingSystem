@@ -25,4 +25,3 @@ D:\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.csproj.CoreCompileInputs.cache
 D:\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.csproj.CopyComplete
 D:\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.dll
 D:\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.pdb
-D:\ICS\ICS.DataAccess\obj\Debug\ICS.DataAccess.csprojAssemblyReference.cache

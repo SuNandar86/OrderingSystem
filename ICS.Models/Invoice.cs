@@ -36,5 +36,11 @@ namespace ICS.Models
             get { return _amount; }
             set { _amount = value; }
         }
+        private DateTime _invoiceDate;
+        public DateTime InvoiceDate
+        {
+            get { return _invoiceDate; }
+            set { _invoiceDate = value; }
+        }
     }
 }

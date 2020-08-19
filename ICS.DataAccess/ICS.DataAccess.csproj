@@ -73,6 +73,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrandDataAccess.cs" />
+    <Compile Include="CategoryDataAccess.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CustomerDataAccess.cs" />
     <Compile Include="InvoiceDataAccess.cs" />
