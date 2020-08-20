@@ -22,6 +22,12 @@ namespace ICS.Controllers
         {
             ProductCollections collection = new ProductCollections();
             IDataReader reader = DataAccess.SelectList(brand_id);
+
+            Product prod = new Product();
+            prod.ProductID = 0;
+            prod.ProductName = "Select Product";
+            collection.Add(prod);
+
             while (reader.Read())
             {
                 Product product = new Product();

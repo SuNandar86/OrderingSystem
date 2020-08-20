@@ -21,6 +21,12 @@ namespace Controllers
         {
             BrandCollections collection = new BrandCollections();
             IDataReader reader = DataAccess.SelectList(category_id);
+
+            Brand brnd = new Brand();
+            brnd.BrandID = 0;
+            brnd.BrandName = "Select Brand";
+            collection.Add(brnd);
+
             while (reader.Read())
             {
                 Brand brand = new Brand();

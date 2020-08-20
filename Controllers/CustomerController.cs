@@ -21,6 +21,12 @@ namespace ICS.Controllers
         {
             CustomerCollections collection = new CustomerCollections();
             IDataReader reader = DataAccess.SelectList();
+            
+            Customer cust= new Customer();
+            cust.CustomerID = 0;
+            cust.CustomerName = "Select Customer";
+            collection.Add(cust); 
+
             while (reader.Read())
             {
                 Customer customer = new Customer();

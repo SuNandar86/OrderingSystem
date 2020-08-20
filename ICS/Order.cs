@@ -63,7 +63,7 @@ namespace ICS.Views
         private void btnCreateCustomer_Click(object sender, EventArgs e)
         {
             frmCustomer fcustomer = new frmCustomer();
-            this.Close();
+            //this.Close();
             fcustomer.ShowDialog();
            
         }
@@ -90,7 +90,6 @@ namespace ICS.Views
             ddlBrand.ValueMember = "BrandID";
             ddlBrand.DataSource = collection;
             ddlBrand.Enabled = true;
-            //ddlBrand.SelectedIndex = 1;
         }
         private void BindProduct(int brand_id)
         {
@@ -101,7 +100,7 @@ namespace ICS.Views
             ddlProduct.DisplayMember = "ProductName";
             ddlProduct.ValueMember = "ProductID";
             ddlProduct.DataSource = collection;           
-            ddlProduct.Enabled = true;
+            ddlProduct.Enabled = true;    
         }
         private void BindCustomer()
         {
@@ -110,7 +109,6 @@ namespace ICS.Views
             ddlCustomer.DisplayMember = "CustomerName";
             ddlCustomer.ValueMember = "CustomerID";
             ddlCustomer.DataSource = collection;
-            ddlCustomer.Text = "Choose Customer";
             ddlCustomer.SelectedIndex = 0;
         }
         public void BindCategory()
@@ -120,9 +118,17 @@ namespace ICS.Views
             ddlCategory.DisplayMember = "CategoryName";
             ddlCategory.ValueMember = "CategoryID";
             ddlCategory.DataSource = collection;
-            ddlCategory.Text = "Choose Category";
             ddlCategory.SelectedIndex = 0;
         }
-       
+
+        private void ddlCustomer_DropDown(object sender, EventArgs e)
+        {
+            CustomerController controller = new CustomerController();
+            CustomerCollections collection = controller.GetCustomerList();
+            ddlCustomer.DisplayMember = "CustomerName";
+            ddlCustomer.ValueMember = "CustomerID";
+            ddlCustomer.DataSource = collection;          
+            ddlCustomer.SelectedIndex = 0;           
+        }
     }
 }

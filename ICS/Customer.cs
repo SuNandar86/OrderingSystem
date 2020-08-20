@@ -28,13 +28,11 @@ namespace ICS.Views
             customer.Gender = ddlGender.Text;
             customerController.Create(customer);
 
-        
-
             MessageBox.Show("Customer Registered Successfully");
             Utilities.ClearTextBoxes(gpCustomer);
+  
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+            private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

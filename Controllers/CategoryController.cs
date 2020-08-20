@@ -21,6 +21,12 @@ namespace Controllers
         {
             CategoryCollections collection = new CategoryCollections();
             IDataReader reader = DataAccess.SelectList();
+
+            Category cat = new Category();
+            cat.CategoryID = 0;
+            cat.CategoryName = "Select Category";
+            collection.Add(cat);
+
             while (reader.Read())
             {
                 Category category = new Category();

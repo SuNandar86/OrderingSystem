@@ -152,6 +152,7 @@
             this.ddlPaymentType.Size = new System.Drawing.Size(163, 28);
             this.ddlPaymentType.TabIndex = 5;
             this.ddlPaymentType.Tag = "8";
+            this.ddlPaymentType.Text = "Choose Payment";
             // 
             // label7
             // 
@@ -256,6 +257,7 @@
             this.ddlCustomer.TabIndex = 1;
             this.ddlCustomer.Tag = "1";
             this.ddlCustomer.Text = "Choose Customer";
+            this.ddlCustomer.DropDown += new System.EventHandler(this.ddlCustomer_DropDown);
             // 
             // label1
             // 
