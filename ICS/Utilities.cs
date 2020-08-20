@@ -27,8 +27,13 @@ namespace ICS.Views
                     {
                         label.Text = string.Empty;
                     }
-
+                }else if (child is NumericUpDown)
+                {
+                    NumericUpDown dropdown = child as NumericUpDown;
+                    dropdown.ResetText();
+                    
                 }
+
             }
         }
     }
