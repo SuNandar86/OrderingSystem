@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ICS.Controllers;
 using ICS.Models;
+
 
 namespace ICS.Views
 {
@@ -67,6 +69,14 @@ namespace ICS.Views
                 lblErrGender.Text = "*";
                 status = false;
             }
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(txtEmail.Text);
+            if (!match.Success)
+            {
+                lblErrEmail.Text = "Invalid Email Format!";
+                status = false;
+            }
+             
             return status;
         }
     }
