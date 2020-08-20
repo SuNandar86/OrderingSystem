@@ -136,8 +136,11 @@ namespace ICS.Views
         }
         private void GetAmount()
         {
-            decimal amount = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Value);
-            txtAmount.Text = amount.ToString();
+            if (!string.IsNullOrEmpty(txtPrice.Text))
+            {
+                decimal amount = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Value);
+                txtAmount.Text = amount.ToString();
+            }            
         }
         private bool isValidate()
         {

@@ -30,7 +30,7 @@ namespace ICS.Views
                 }else if (child is NumericUpDown)
                 {
                     NumericUpDown dropdown = child as NumericUpDown;
-                    dropdown.ResetText();
+                    dropdown.Value=0;
                     
                 }
 
