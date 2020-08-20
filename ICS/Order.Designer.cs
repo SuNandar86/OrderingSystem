@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.gpOrder = new System.Windows.Forms.GroupBox();
+            this.lblErrProductName = new System.Windows.Forms.Label();
+            this.lblErrBrand = new System.Windows.Forms.Label();
+            this.lblErrCatName = new System.Windows.Forms.Label();
+            this.lblErrCustName = new System.Windows.Forms.Label();
+            this.lblErrorCustomer = new System.Windows.Forms.Label();
             this.ddlBrand = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ddlCategory = new System.Windows.Forms.ComboBox();
@@ -48,12 +53,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ddlCustomer = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblErrPayment = new System.Windows.Forms.Label();
             this.gpOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQty)).BeginInit();
             this.SuspendLayout();
             // 
             // gpOrder
             // 
+            this.gpOrder.Controls.Add(this.lblErrPayment);
+            this.gpOrder.Controls.Add(this.lblErrProductName);
+            this.gpOrder.Controls.Add(this.lblErrBrand);
+            this.gpOrder.Controls.Add(this.lblErrCatName);
+            this.gpOrder.Controls.Add(this.lblErrCustName);
+            this.gpOrder.Controls.Add(this.lblErrorCustomer);
             this.gpOrder.Controls.Add(this.ddlBrand);
             this.gpOrder.Controls.Add(this.label8);
             this.gpOrder.Controls.Add(this.ddlCategory);
@@ -80,11 +92,66 @@
             this.gpOrder.TabStop = false;
             this.gpOrder.Text = "Place Order";
             // 
+            // lblErrProductName
+            // 
+            this.lblErrProductName.AutoSize = true;
+            this.lblErrProductName.Font = new System.Drawing.Font("Zawgyi-One", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrProductName.ForeColor = System.Drawing.Color.Red;
+            this.lblErrProductName.Location = new System.Drawing.Point(341, 151);
+            this.lblErrProductName.Name = "lblErrProductName";
+            this.lblErrProductName.Size = new System.Drawing.Size(0, 25);
+            this.lblErrProductName.TabIndex = 12;
+            this.lblErrProductName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblErrBrand
+            // 
+            this.lblErrBrand.AutoSize = true;
+            this.lblErrBrand.Font = new System.Drawing.Font("Zawgyi-One", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrBrand.ForeColor = System.Drawing.Color.Red;
+            this.lblErrBrand.Location = new System.Drawing.Point(341, 111);
+            this.lblErrBrand.Name = "lblErrBrand";
+            this.lblErrBrand.Size = new System.Drawing.Size(0, 25);
+            this.lblErrBrand.TabIndex = 12;
+            this.lblErrBrand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblErrCatName
+            // 
+            this.lblErrCatName.AutoSize = true;
+            this.lblErrCatName.Font = new System.Drawing.Font("Zawgyi-One", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrCatName.ForeColor = System.Drawing.Color.Red;
+            this.lblErrCatName.Location = new System.Drawing.Point(341, 67);
+            this.lblErrCatName.Name = "lblErrCatName";
+            this.lblErrCatName.Size = new System.Drawing.Size(0, 25);
+            this.lblErrCatName.TabIndex = 12;
+            this.lblErrCatName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblErrCustName
+            // 
+            this.lblErrCustName.AutoSize = true;
+            this.lblErrCustName.Font = new System.Drawing.Font("Zawgyi-One", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblErrCustName.ForeColor = System.Drawing.Color.Red;
+            this.lblErrCustName.Location = new System.Drawing.Point(341, 34);
+            this.lblErrCustName.Name = "lblErrCustName";
+            this.lblErrCustName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblErrCustName.Size = new System.Drawing.Size(0, 25);
+            this.lblErrCustName.TabIndex = 12;
+            this.lblErrCustName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblErrorCustomer
+            // 
+            this.lblErrorCustomer.AutoSize = true;
+            this.lblErrorCustomer.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCustomer.Location = new System.Drawing.Point(63, -95);
+            this.lblErrorCustomer.Name = "lblErrorCustomer";
+            this.lblErrorCustomer.Size = new System.Drawing.Size(40, 20);
+            this.lblErrorCustomer.TabIndex = 11;
+            this.lblErrorCustomer.Text = "Errors";
+            // 
             // ddlBrand
             // 
             this.ddlBrand.Enabled = false;
             this.ddlBrand.FormattingEnabled = true;
-            this.ddlBrand.Location = new System.Drawing.Point(170, 108);
+            this.ddlBrand.Location = new System.Drawing.Point(172, 108);
             this.ddlBrand.Name = "ddlBrand";
             this.ddlBrand.Size = new System.Drawing.Size(163, 28);
             this.ddlBrand.TabIndex = 10;
@@ -103,7 +170,7 @@
             // ddlCategory
             // 
             this.ddlCategory.FormattingEnabled = true;
-            this.ddlCategory.Location = new System.Drawing.Point(170, 67);
+            this.ddlCategory.Location = new System.Drawing.Point(172, 67);
             this.ddlCategory.Name = "ddlCategory";
             this.ddlCategory.Size = new System.Drawing.Size(163, 28);
             this.ddlCategory.TabIndex = 9;
@@ -145,6 +212,7 @@
             "Credit Card"});
             this.ddlPaymentType.FormattingEnabled = true;
             this.ddlPaymentType.Items.AddRange(new object[] {
+            "Select Payment",
             "Cash ",
             "Credit Card"});
             this.ddlPaymentType.Location = new System.Drawing.Point(170, 305);
@@ -152,7 +220,6 @@
             this.ddlPaymentType.Size = new System.Drawing.Size(163, 28);
             this.ddlPaymentType.TabIndex = 5;
             this.ddlPaymentType.Tag = "8";
-            this.ddlPaymentType.Text = "Choose Payment";
             // 
             // label7
             // 
@@ -165,7 +232,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(355, 27);
+            this.button2.Location = new System.Drawing.Point(360, 31);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 32);
             this.button2.TabIndex = 7;
@@ -204,6 +271,11 @@
             // txtQty
             // 
             this.txtQty.Location = new System.Drawing.Point(170, 233);
+            this.txtQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(67, 27);
             this.txtQty.TabIndex = 3;
@@ -233,7 +305,7 @@
             // 
             this.ddlProduct.Enabled = false;
             this.ddlProduct.FormattingEnabled = true;
-            this.ddlProduct.Location = new System.Drawing.Point(170, 148);
+            this.ddlProduct.Location = new System.Drawing.Point(172, 148);
             this.ddlProduct.Name = "ddlProduct";
             this.ddlProduct.Size = new System.Drawing.Size(163, 28);
             this.ddlProduct.TabIndex = 2;
@@ -252,7 +324,7 @@
             // ddlCustomer
             // 
             this.ddlCustomer.FormattingEnabled = true;
-            this.ddlCustomer.Location = new System.Drawing.Point(170, 31);
+            this.ddlCustomer.Location = new System.Drawing.Point(172, 31);
             this.ddlCustomer.Name = "ddlCustomer";
             this.ddlCustomer.Size = new System.Drawing.Size(163, 28);
             this.ddlCustomer.TabIndex = 1;
@@ -268,6 +340,15 @@
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Name";
+            // 
+            // lblErrPayment
+            // 
+            this.lblErrPayment.AutoSize = true;
+            this.lblErrPayment.ForeColor = System.Drawing.Color.Red;
+            this.lblErrPayment.Location = new System.Drawing.Point(340, 305);
+            this.lblErrPayment.Name = "lblErrPayment";
+            this.lblErrPayment.Size = new System.Drawing.Size(0, 20);
+            this.lblErrPayment.TabIndex = 13;
             // 
             // frmOrder
             // 
@@ -309,6 +390,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox ddlCategory;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblErrorCustomer;
+        private System.Windows.Forms.Label lblErrCustName;
+        private System.Windows.Forms.Label lblErrCatName;
+        private System.Windows.Forms.Label lblErrProductName;
+        private System.Windows.Forms.Label lblErrBrand;
+        private System.Windows.Forms.Label lblErrPayment;
     }
 }
 

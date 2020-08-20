@@ -23,28 +23,30 @@ namespace ICS.Views
         {
             BindCustomer();
             BindCategory();
+            ddlPaymentType.SelectedIndex = 0;
         }
-        private void btnPlaceOrder_Click(object sender, EventArgs e)        {
-            
-            Invoice invoice = new Invoice();
-            invoice.CustomerID =Convert.ToInt32(ddlCustomer.SelectedValue);
-            invoice.ItemID = Convert.ToInt32(ddlProduct.SelectedValue);
-            invoice.Quantity = Convert.ToInt32(txtQty.Text);
-            invoice.Amount = Convert.ToInt32(txtAmount.Text);
-            invoice.InvoiceDate = DateTime.Now;
+        private void btnPlaceOrder_Click(object sender, EventArgs e){
+            if (isValidate()) {             
+                Invoice invoice = new Invoice();
+                invoice.CustomerID = Convert.ToInt32(ddlCustomer.SelectedValue);
+                invoice.ItemID = Convert.ToInt32(ddlProduct.SelectedValue);
+                invoice.Quantity = Convert.ToInt32(txtQty.Text);
+                invoice.Amount = Convert.ToInt32(txtAmount.Text);
+                invoice.InvoiceDate = DateTime.Now;
 
-            Payment payment = new Payment();
-            payment.CustomerID= Convert.ToInt32(ddlCustomer.SelectedValue);
-            payment.PaymentType = ddlPaymentType.Text;
-            payment.Amount = Convert.ToInt32(txtAmount.Text);
-            payment.PaymentDate = DateTime.Now;
+                Payment payment = new Payment();
+                payment.CustomerID = Convert.ToInt32(ddlCustomer.SelectedValue);
+                payment.PaymentType = ddlPaymentType.Text;
+                payment.Amount = Convert.ToInt32(txtAmount.Text);
+                payment.PaymentDate = DateTime.Now;
 
 
-            FacadeOrderController order = new FacadeOrderController();
-            order.PlaceOrder(invoice,payment);
+                FacadeOrderController order = new FacadeOrderController();
+                order.PlaceOrder(invoice, payment);
 
-            MessageBox.Show("Order Placed Successfully");
-            Utilities.ClearTextBoxes(gpOrder);
+                MessageBox.Show("Order Placed Successfully");
+                Utilities.ClearControl(gpOrder);
+            }             
         }        
        
         private void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,6 +139,37 @@ namespace ICS.Views
             decimal amount = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Value);
             txtAmount.Text = amount.ToString();
         }
-       
+        private bool isValidate()
+        {
+            bool status = true;
+
+            if (ddlCustomer.SelectedIndex==0)
+            {
+                lblErrCustName.Text = "*";
+                status = false;
+            }
+            if(ddlCategory.SelectedIndex == 0)
+            {
+                lblErrCatName.Text = "*";
+                status = false;
+            }
+            if(ddlBrand.SelectedIndex == 0)
+            {
+                lblErrBrand.Text = "*";
+                status = false;
+            }
+            if (ddlProduct.SelectedIndex == 0)
+            {
+                lblErrProductName.Text = "*";
+                status = false;
+            }
+            if(ddlPaymentType.SelectedIndex == 0)
+            {
+                lblErrPayment.Text = "*";
+                status = false;
+
+            }
+            return status;
+        }
     }
 }

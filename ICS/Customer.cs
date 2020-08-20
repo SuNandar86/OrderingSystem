@@ -29,7 +29,7 @@ namespace ICS.Views
             customerController.Create(customer);
 
             MessageBox.Show("Customer Registered Successfully");
-            Utilities.ClearTextBoxes(gpCustomer);
+            Utilities.ClearControl(gpCustomer);
   
         }
             private void btnCancel_Click(object sender, EventArgs e)

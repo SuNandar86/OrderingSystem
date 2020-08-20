@@ -7,7 +7,7 @@ namespace ICS.Views
 {
     public static class Utilities
     {
-        public static void  ClearTextBoxes(Control parent)
+        public static void  ClearControl(Control parent)
         {
             foreach (Control child in parent.Controls)
             {
@@ -20,9 +20,15 @@ namespace ICS.Views
                     if (combobox.Items.Count>0)
                     {
                         combobox.SelectedIndex = 0;
+                    }                    
+                }else if(child is Label) {
+                    Label label = child as Label;
+                    if (label.Name.StartsWith("lblErr"))
+                    {
+                        label.Text = string.Empty;
                     }
-                    
-                }  
+
+                }
             }
         }
     }
