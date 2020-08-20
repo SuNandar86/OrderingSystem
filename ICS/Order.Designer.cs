@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gpOrder = new System.Windows.Forms.GroupBox();
+            this.lblErrQuantity = new System.Windows.Forms.Label();
+            this.lblErrPayment = new System.Windows.Forms.Label();
             this.lblErrProductName = new System.Windows.Forms.Label();
             this.lblErrBrand = new System.Windows.Forms.Label();
             this.lblErrCatName = new System.Windows.Forms.Label();
@@ -53,13 +55,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ddlCustomer = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblErrPayment = new System.Windows.Forms.Label();
             this.gpOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQty)).BeginInit();
             this.SuspendLayout();
             // 
             // gpOrder
             // 
+            this.gpOrder.Controls.Add(this.lblErrQuantity);
             this.gpOrder.Controls.Add(this.lblErrPayment);
             this.gpOrder.Controls.Add(this.lblErrProductName);
             this.gpOrder.Controls.Add(this.lblErrBrand);
@@ -91,6 +93,25 @@
             this.gpOrder.TabIndex = 0;
             this.gpOrder.TabStop = false;
             this.gpOrder.Text = "Place Order";
+            // 
+            // lblErrQuantity
+            // 
+            this.lblErrQuantity.AutoSize = true;
+            this.lblErrQuantity.ForeColor = System.Drawing.Color.Red;
+            this.lblErrQuantity.Location = new System.Drawing.Point(243, 235);
+            this.lblErrQuantity.Name = "lblErrQuantity";
+            this.lblErrQuantity.Size = new System.Drawing.Size(0, 20);
+            this.lblErrQuantity.TabIndex = 14;
+            this.lblErrQuantity.UseMnemonic = false;
+            // 
+            // lblErrPayment
+            // 
+            this.lblErrPayment.AutoSize = true;
+            this.lblErrPayment.ForeColor = System.Drawing.Color.Red;
+            this.lblErrPayment.Location = new System.Drawing.Point(340, 305);
+            this.lblErrPayment.Name = "lblErrPayment";
+            this.lblErrPayment.Size = new System.Drawing.Size(0, 20);
+            this.lblErrPayment.TabIndex = 13;
             // 
             // lblErrProductName
             // 
@@ -341,15 +362,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Name";
             // 
-            // lblErrPayment
-            // 
-            this.lblErrPayment.AutoSize = true;
-            this.lblErrPayment.ForeColor = System.Drawing.Color.Red;
-            this.lblErrPayment.Location = new System.Drawing.Point(340, 305);
-            this.lblErrPayment.Name = "lblErrPayment";
-            this.lblErrPayment.Size = new System.Drawing.Size(0, 20);
-            this.lblErrPayment.TabIndex = 13;
-            // 
             // frmOrder
             // 
             this.AllowDrop = true;
@@ -396,6 +408,7 @@
         private System.Windows.Forms.Label lblErrProductName;
         private System.Windows.Forms.Label lblErrBrand;
         private System.Windows.Forms.Label lblErrPayment;
+        private System.Windows.Forms.Label lblErrQuantity;
     }
 }
 

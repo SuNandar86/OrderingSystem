@@ -167,7 +167,11 @@ namespace ICS.Views
             {
                 lblErrPayment.Text = "*";
                 status = false;
-
+            }
+            if (txtQty.Value < 1)
+            {
+                lblErrQuantity.Text = "Quantity should not be 0!";
+                status = false;
             }
             return status;
         }
