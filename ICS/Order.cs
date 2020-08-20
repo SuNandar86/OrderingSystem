@@ -56,10 +56,12 @@ namespace ICS.Views
 
         private void txtQty_KeyUp(object sender, KeyEventArgs e)
         {
-            decimal amount = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Value);
-            txtAmount.Text = amount.ToString();
+            GetAmount();
         }
-
+        private void txtQty_ValueChanged(object sender, EventArgs e)
+        {
+            GetAmount();
+        }
         private void btnCreateCustomer_Click(object sender, EventArgs e)
         {
             frmCustomer fcustomer = new frmCustomer();
@@ -130,5 +132,11 @@ namespace ICS.Views
             ddlCustomer.DataSource = collection;          
             ddlCustomer.SelectedIndex = 0;           
         }
+        private void GetAmount()
+        {
+            decimal amount = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Value);
+            txtAmount.Text = amount.ToString();
+        }
+       
     }
 }

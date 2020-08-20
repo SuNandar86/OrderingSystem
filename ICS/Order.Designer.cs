@@ -208,6 +208,7 @@
             this.txtQty.Size = new System.Drawing.Size(67, 27);
             this.txtQty.TabIndex = 3;
             this.txtQty.Tag = "6";
+            this.txtQty.ValueChanged += new System.EventHandler(this.txtQty_ValueChanged);
             this.txtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyUp);
             // 
             // label5
