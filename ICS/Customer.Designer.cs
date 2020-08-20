@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.gpCustomer = new System.Windows.Forms.GroupBox();
+            this.lblErrAddress = new System.Windows.Forms.Label();
+            this.lblErrGender = new System.Windows.Forms.Label();
+            this.lblErrEmail = new System.Windows.Forms.Label();
+            this.lblErrPhone = new System.Windows.Forms.Label();
+            this.lblErrCustName = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.ddlGender = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -46,6 +51,11 @@
             // 
             // gpCustomer
             // 
+            this.gpCustomer.Controls.Add(this.lblErrAddress);
+            this.gpCustomer.Controls.Add(this.lblErrGender);
+            this.gpCustomer.Controls.Add(this.lblErrEmail);
+            this.gpCustomer.Controls.Add(this.lblErrPhone);
+            this.gpCustomer.Controls.Add(this.lblErrCustName);
             this.gpCustomer.Controls.Add(this.btnCancel);
             this.gpCustomer.Controls.Add(this.ddlGender);
             this.gpCustomer.Controls.Add(this.btnSave);
@@ -65,12 +75,58 @@
             this.gpCustomer.TabStop = false;
             this.gpCustomer.Text = "Customer";
             // 
+            // lblErrAddress
+            // 
+            this.lblErrAddress.AutoSize = true;
+            this.lblErrAddress.ForeColor = System.Drawing.Color.Red;
+            this.lblErrAddress.Location = new System.Drawing.Point(407, 191);
+            this.lblErrAddress.Name = "lblErrAddress";
+            this.lblErrAddress.Size = new System.Drawing.Size(0, 20);
+            this.lblErrAddress.TabIndex = 7;
+            // 
+            // lblErrGender
+            // 
+            this.lblErrGender.AutoSize = true;
+            this.lblErrGender.ForeColor = System.Drawing.Color.Red;
+            this.lblErrGender.Location = new System.Drawing.Point(268, 157);
+            this.lblErrGender.Name = "lblErrGender";
+            this.lblErrGender.Size = new System.Drawing.Size(0, 20);
+            this.lblErrGender.TabIndex = 7;
+            // 
+            // lblErrEmail
+            // 
+            this.lblErrEmail.AutoSize = true;
+            this.lblErrEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblErrEmail.Location = new System.Drawing.Point(407, 122);
+            this.lblErrEmail.Name = "lblErrEmail";
+            this.lblErrEmail.Size = new System.Drawing.Size(0, 20);
+            this.lblErrEmail.TabIndex = 7;
+            // 
+            // lblErrPhone
+            // 
+            this.lblErrPhone.AutoSize = true;
+            this.lblErrPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblErrPhone.Location = new System.Drawing.Point(407, 81);
+            this.lblErrPhone.Name = "lblErrPhone";
+            this.lblErrPhone.Size = new System.Drawing.Size(0, 20);
+            this.lblErrPhone.TabIndex = 7;
+            // 
+            // lblErrCustName
+            // 
+            this.lblErrCustName.AutoSize = true;
+            this.lblErrCustName.ForeColor = System.Drawing.Color.Red;
+            this.lblErrCustName.Location = new System.Drawing.Point(407, 40);
+            this.lblErrCustName.Name = "lblErrCustName";
+            this.lblErrCustName.Size = new System.Drawing.Size(0, 20);
+            this.lblErrCustName.TabIndex = 7;
+            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(206, 233);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(65, 28);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -92,7 +148,7 @@
             this.btnSave.Location = new System.Drawing.Point(134, 232);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(66, 29);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -110,7 +166,7 @@
             // 
             this.txtAddress.Location = new System.Drawing.Point(134, 191);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(426, 27);
+            this.txtAddress.Size = new System.Drawing.Size(266, 27);
             this.txtAddress.TabIndex = 5;
             // 
             // txtEmail
@@ -200,5 +256,10 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblErrEmail;
+        private System.Windows.Forms.Label lblErrPhone;
+        private System.Windows.Forms.Label lblErrCustName;
+        private System.Windows.Forms.Label lblErrAddress;
+        private System.Windows.Forms.Label lblErrGender;
     }
 }
