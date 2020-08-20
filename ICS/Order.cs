@@ -63,8 +63,9 @@ namespace ICS.Views
         private void btnCreateCustomer_Click(object sender, EventArgs e)
         {
             frmCustomer fcustomer = new frmCustomer();
-            fcustomer.ShowDialog();
             this.Close();
+            fcustomer.ShowDialog();
+           
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
